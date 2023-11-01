@@ -10,13 +10,15 @@
 ![Static badge](https://img.shields.io/badge/2.1.2-SweetAlert-black)
 ![Static badge](https://img.shields.io/badge/2.1.4-WebVitals-blue)
 
-### What must be installed
+ What must be installed
+===============================
+
 
 * Download this project 
 
     Markup :  Download
 
-        git clone "https://github.com/addabenkoceir13/E-Shop-Dz-Client. git"
+        git clone "https://github.com/addabenkoceir13/E-Shop-Dz-Client.git"
 
     <br>
 
@@ -24,8 +26,11 @@
 
     <br>
 
-    * >Install the necessary packages for the project to work correctly:
+    >Install the necessary packages for the project to work correctly:
+    <br>
+    npm install bootstrap react-bootstrap axios sweetalert webvitals
 
+    <br>
     - Install pakager react js
 
             npm install
@@ -45,5 +50,9 @@
     - install axios
   
             npm install axios
+    
+    - install sweetalert
+
+            npm install sweetalert
 
 
