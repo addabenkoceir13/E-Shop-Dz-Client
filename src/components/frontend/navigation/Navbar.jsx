@@ -69,7 +69,7 @@ function Navbar() {
                                 <>
                                 <div className="dropdown">
                                     <Link className="btn btn-dark dropdown-toggle" to={`/`} role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown link
+                                        {localStorage.getItem('auth_name')}
                                     </Link>
 
                                     <ul className="dropdown-menu">
