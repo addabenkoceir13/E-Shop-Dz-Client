@@ -15,8 +15,9 @@
 
 
 * Download this project 
-
-    Markup :  Download
+* ### Installation
+  To run this project you need to have Node installed on your system.
+  <br><br>
 
         git clone "https://github.com/addabenkoceir13/E-Shop-Dz-Client.git"
 
@@ -26,33 +27,36 @@
 
     <br>
 
-    >Install the necessary packages for the project to work correctly:
+    >Install the necessary packages for the project to work correctly.
     <br>
-    npm install bootstrap react-bootstrap axios sweetalert webvitals
+    >
+    >>npm install bootstrap react-bootstrap axios sweetalert webvitals
 
     <br>
+
     - Install pakager react js
+        <br>
 
             npm install
+
     - install bootstrap 
- 
-            npm install react-boostrap bootstrap
-    
-    
     - install react router dom
-  
-            npm  install react-router-dom
-
-    -  install React Icons
-  
-            npm install react-icons
-
+    - install React Icons
     - install axios
-  
-            npm install axios
-    
     - install sweetalert
+  
+- **Start Project**
+  
+  To start the project, you need to run it in development mode:
 
-            npm install sweetalert
+        npm start
 
+### Technologies Used
+
+- React.js
+- Boostrap 
+
+### Feature
+
+- Authentication
 
