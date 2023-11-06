@@ -7,6 +7,8 @@ import Login from './components/frontend/auth/Login';
 import Register from './components/frontend/auth/Register';
 import axios from 'axios';
 import AdminPrivateRoute from './AdminPrivateRoute';
+import NPage403 from './components/errors/NPage403';
+import NPage404 from './components/errors/NPage404';
 
 axios.defaults.baseURL = "http://127.0.0.1:8000/";
 axios.defaults.headers.post["Content-Type"] = 'application/json';
@@ -25,8 +27,9 @@ function App() {
         <Switch>
           {/*----------------- Start Frontend page ------------------------------------------ */}
             <Route path='/' exact component={Home} />
-            {/* <Route path='/auth/login'  component={Login} />
-            <Route path='/auth/register'  component={Register} /> */}
+
+            <Route path="/403" component={NPage403} />
+            <Route path="/404" component={NPage404} />
 
             <Route path='/auth/login'>
               {localStorage.getItem('auth_token') ? <Redirect to='/' />  : <Login />}

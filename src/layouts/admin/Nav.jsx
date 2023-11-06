@@ -1,14 +1,50 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import swal from 'sweetalert';
+
 
 function Nav() {
+
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
+
+    const logout = (e) =>
+    {
+        setLoading(true)
+        e.preventDefault();
+        axios.post('/api/logout').then(res => {
+            localStorage.removeItem('auth_token', res.data.token);
+            localStorage.removeItem('auth_name', res.data.username);
+            swal("Successfully",res.data.message, "success",
+            {
+            buttons: false,
+            timer: 3000,
+            });
+            history.push('/auth/login')
+            setLoading(false)
+            setTimeout(() => {
+                window.location.reload();
+            },2500)
+        });
+    }
+    if (loading) {
+        return(
+            <>
+                <div className="d-flex justify-content-center align-items-center vh-100">
+                    <div className="spinner"></div>
+                </div>
+            </>
+        )
+    }
     return (
         <>
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/* <!-- Navbar Brand--> */}
             <Link to="#" className="navbar-brand ps-3">Start Bootstrap</Link>
             {/* <!-- Sidebar Toggle--> */}
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" >
+            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0b bg-light" id="sidebarToggle" >
                 <i className="fas fa-bars"></i>
             </button>
             {/* <!-- Navbar Search--> */}
@@ -28,7 +64,7 @@ function Nav() {
                         <li><Link to="#" className="dropdown-item" >Settings</Link></li>
                         <li><Link to="#" className="dropdown-item" >Activity Log</Link></li>
                         <li><hr className="dropdown-divider" /></li>
-                        <li><Link to="#" className="dropdown-item" >Logout</Link></li>
+                        <li><p onClick={logout} className="dropdown-item cursor-pointer" >Logout</p></li>
                     </ul>
                 </li>
             </ul>

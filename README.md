@@ -10,7 +10,7 @@
 ![Static badge](https://img.shields.io/badge/2.1.2-SweetAlert-black)
 ![Static badge](https://img.shields.io/badge/2.1.4-WebVitals-blue)
 
- 2. What must be installed
+What must be installed
 ===============================
 
 
@@ -28,7 +28,6 @@
     <br>
 
     >Install the necessary packages for the project to work correctly.
-    <br>
     >
     >>npm install bootstrap react-bootstrap axios sweetalert webvitals
 

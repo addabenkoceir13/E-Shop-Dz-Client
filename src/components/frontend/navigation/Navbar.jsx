@@ -1,14 +1,17 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import swal from 'sweetalert';
 
 function Navbar() {
+    const [loading, setLoading] = useState(false)
+    // ------------------- Start Log Out -------------------------------------------------------
     const history = useHistory();
     const logout = (e) =>
     { 
         e.preventDefault();
+        setLoading(true)
         axios.post('/api/logout').then(res => {
             if (res.data.status === 200) {
                 localStorage.removeItem('auth_token', res.data.token);
@@ -19,12 +22,23 @@ function Navbar() {
                 timer: 3000,
                 });
                 history.push('/auth/login')
+                setLoading(false)
+                setTimeout(() => {
+                    window.location.reload();
+                },2500)
             }
         });
-        // history.push('/');
     }
-
-    
+    // ------------------- End Log Out -------------------------------------------------------
+    if (loading) {
+        return(
+            <>
+                <div className="d-flex justify-content-center align-items-center vh-100">
+                    <div className="spinner"></div>
+                </div>
+            </>
+        )
+    }
     return (
         <div className=''>
             <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body sticky-top fs-5 " data-bs-theme="dark">
