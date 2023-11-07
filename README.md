@@ -55,7 +55,46 @@ What must be installed
 - React.js
 - Boostrap 
 
-### Feature
+Feature
+========================
 
-- Authentication
+> **Admin**
+<br>
+    - Authentication <br>
+    - Category Management <br>
+
+<br>
+
+>**Client**
+<br>
+    - Authentication <br>
+
+How to Use 
+==================================
+
+-  Authentication 
+  
+   -  **Admin**
+
+| Feature  | Method | URL | Role & Access |
+| ------------- | ------------- | ---------|----------|
+| Login   | POST   | api/auth/login | Public |
+| Login   | POST   | api/auth/login | Admin  |
+|  Register |  POST   |  api/auth/register |  Public |
+
+
+  - Users
+
+| Feature  | Method | URL | Role & Access |
+| ------------- | ------------- | ---------|----------|
+| Login   | POST   | api/auth/login | Public |
+|  Register |  POST   |  api/auth/register |  Public |
+|   |   |   |   |
+
+  - Categories
+
+| Feature  | Method | URL | Role & Access |
+| ------------- | ------------- | ---------|----------|
+|  Create Categories  |  POST  | api/admin/store-category | Private Admin/Auth |
+
 

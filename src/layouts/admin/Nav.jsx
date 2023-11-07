@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import swal from 'sweetalert';
-
+import {FaBars } from 'react-icons/fa'
 
 function Nav() {
 
@@ -44,9 +44,12 @@ function Nav() {
             {/* <!-- Navbar Brand--> */}
             <Link to="#" className="navbar-brand ps-3">Start Bootstrap</Link>
             {/* <!-- Sidebar Toggle--> */}
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0b bg-light" id="sidebarToggle" >
-                <i className="fas fa-bars"></i>
+            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0b " id="sidebarToggle" >
+            <FaBars className=''/>
             </button>
+            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" >
+                <i className="fas fa-bars"></i> toggle
+                </button>
             {/* <!-- Navbar Search--> */}
             <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div className="input-group">

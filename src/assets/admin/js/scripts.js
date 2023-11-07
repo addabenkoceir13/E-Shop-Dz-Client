@@ -8,6 +8,7 @@
 // 
 
 window.addEventListener('DOMContentLoaded', event => {
+    console.log("rahi khadama wla lala")
 
     // Toggle the side navigation
     const sidebarToggle = document.body.querySelector('#sidebarToggle');

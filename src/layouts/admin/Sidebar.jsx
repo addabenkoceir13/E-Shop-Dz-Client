@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {Link} from 'react-router-dom'
 function Sidebar() {
@@ -9,7 +10,11 @@ function Sidebar() {
                     <div className="sb-sidenav-menu-heading">Core</div>
                     <Link className="nav-link" to="/admin/dashboard">
                         <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                        Dashboard
+                        Dashboard 
+                    </Link>
+                    <Link className="nav-link" to="/admin/add-category">
+                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        Add Category
                     </Link>
                     <Link className="nav-link" to="/admin/profile">
                         <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
