@@ -1,9 +1,9 @@
-import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
-import {FaBars } from 'react-icons/fa'
+import axios from 'axios';
+import '../../assets/admin/js/scripts'
 
 function Nav() {
 
@@ -42,14 +42,11 @@ function Nav() {
         <>
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/* <!-- Navbar Brand--> */}
-            <Link to="#" className="navbar-brand ps-3">Start Bootstrap</Link>
+            <Link to="#" className="navbar-brand ps-3">E-Shop DZ Dashboard</Link>
             {/* <!-- Sidebar Toggle--> */}
-            <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0b " id="sidebarToggle" >
-            <FaBars className=''/>
-            </button>
             <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" >
-                <i className="fas fa-bars"></i> toggle
-                </button>
+                <i className="fas fa-bars"></i> 
+            </button>
             {/* <!-- Navbar Search--> */}
             <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div className="input-group">

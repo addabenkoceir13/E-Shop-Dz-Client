@@ -7,12 +7,13 @@ function Category() {
         slug: '',
         name: '',
         description: '',
-        status: '',
+        stats: '',
         meta_title: '',
         meta_ceywords: '',
         meta_description: '',
         error_list: []
     })
+    const [loading, setLoading] = useState(false)
     const handleInput = (e) => {
         e.persist();
         setCatergoryInput({
@@ -26,29 +27,41 @@ function Category() {
             slug        : categoryInput.slug,
             name        : categoryInput.name,
             description : categoryInput.description,
-            status      : categoryInput.status,
+            status      : categoryInput.stats,
             meta_title  : categoryInput.meta_title,
             meta_ceywords    : categoryInput.meta_ceywords,
             meta_description : categoryInput.meta_description,
         }
 
+        setLoading(true)
         axios.post('/api/admin/store-category', data).then(res => {
-            console.log('response', res);
             if (res.data.status === 200) 
             {
+                setLoading(false)
                 swal("Successfully", res.data.message, "success",{
                     buttons: false,
                     timer: 2500
                 })
-                document.getElementById('CATEGORY_FORM').reset();
+                setTimeout(()=>{
+                    window.location.reload();
+                }, 2700)
+                // document.getElementById('CATEGORY_FORM').reset();
             } 
             else if(res.data.status === 400)
             {
+                setLoading(false)
                 setCatergoryInput({...categoryInput, error_list:res.data.errors})
             }
         })
     }
-    
+    if (loading) 
+    {
+        return(
+            <div className="d-flex justify-content-center align-items-center vh-100">
+                <div className="spinner"></div>
+            </div>
+        ) 
+    }
     return (
         <div className='container-fluid px-4'>
             <h1 className="my-4">Add Category</h1>
@@ -106,10 +119,11 @@ function Category() {
                             <p className='fw-bold' >Status</p>
                             <input 
                                 className="form-check-input" 
+                                name='stats'
                                 type="checkbox" 
                                 id="flexCheckDefault"
                                 onChange={handleInput}
-                                value={categoryInput.status} 
+                                value={categoryInput.stats} 
                             />
                             <label className="form-check-label" htmlFor="flexCheckDefault">
                                 Status
