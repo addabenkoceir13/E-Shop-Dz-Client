@@ -39,8 +39,8 @@ function ViewCategory() {
           <td>{item.status}</td>
           <td>{item.meta_title}</td>
           <td>
-            <Link to={`/edit-category/${item.id}`} className='btn btn-success mx-2'><FiEdit /></Link>
-            <Link to={`/edit-category/${item.id}`} className='btn btn-outline-danger'><AiOutlineDelete /></Link>
+            <Link to={`/admin/edit-category/${item.id}`} className='btn btn-success mx-2'><FiEdit /></Link>
+            <Link to={`/admin/delete-category/${item.id}`} className='btn btn-outline-danger'><AiOutlineDelete /></Link>
           </td>
         </tr>
       )
