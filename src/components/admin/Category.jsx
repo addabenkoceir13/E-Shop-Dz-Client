@@ -44,7 +44,7 @@ function Category() {
                 })
                 setTimeout(()=>{
                     window.location.reload();
-                }, 2700)
+                }, 2000)
                 // document.getElementById('CATEGORY_FORM').reset();
             } 
             else if(res.data.status === 400)

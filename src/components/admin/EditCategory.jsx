@@ -44,6 +44,7 @@ function EditCategory(props)
         e.preventDefault()
         const category_id = props.match.params.id;
         const data = categoryInput;
+        
         axios.put(`api/admin/update-category/${category_id}`, data).then(res =>
             {
             console.log(res.data);
