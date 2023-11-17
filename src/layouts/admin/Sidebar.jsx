@@ -9,23 +9,27 @@ function Sidebar() {
         <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div className="sb-sidenav-menu">
                 <div className="nav">
-                    <div className="sb-sidenav-menu-heading">Core</div>
+                    <div className="sb-sidenav-menu-heading">Added</div>
                     <Link className="nav-link" to="/admin/dashboard">
                         <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                         Dashboard 
                     </Link>
                     <Link className="nav-link" to="/admin/add-category">
-                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        <div className="sb-nav-link-icon"><i className="fa-solid fa-caret-right"></i></div>
                         Add Category
                     </Link>
-                    <Link className="nav-link" to="/admin/profile">
-                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                        Profile
+                    <Link className="nav-link" to="/admin/add-products">
+                        <div className="sb-nav-link-icon"><i className="fa-solid fa-caret-right"></i></div>
+                        Add Products
                     </Link>
-                    <div className="sb-sidenav-menu-heading">Interface</div>
+                    <div className="sb-sidenav-menu-heading">Views</div>
                     <Link className="nav-link" to="/admin/view-category" >
-                        <div className="sb-nav-link-icon"><i className="fas fa-columns"></i></div>
+                        <div className="sb-nav-link-icon"><i className="fa-solid fa-list"></i></div>
                         View Category
+                    </Link>
+                    <Link className="nav-link" to="/admin/view-products" >
+                        <div className="sb-nav-link-icon"><i className="fa-solid fa-list"></i></div>
+                        View Peroducts
                     </Link>
                     <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div className="sb-nav-link-icon"><i className="fas fa-book-open"></i></div>
